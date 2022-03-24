@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Datamap from "./Datamap";
 
 const rootElement = document.getElementById("root")
 
@@ -11,8 +12,9 @@ ReactDOM.render(
     <React.StrictMode>
     <BrowserRouter>
         <Routes>
-            <Route path="/" element={<App/>}/>
-            <Route path="/:application_code" element={<App/>}/>
+            <Route path="/" element={<App/>}>
+                <Route path=":application_code" element={<Datamap/>}/>
+            </Route>
         </Routes>
     </BrowserRouter>
     </React.StrictMode>,
