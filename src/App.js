@@ -12,7 +12,6 @@ function App() {
     let [responseGetModelInfo, setResponseGetModelInfo] = useState([]);
     let [errorGetModelInfo, setErrorGetModelInfo] = useState("false");
 
-
     let { application_code } = useParams()
 
     const getApps = async () => {
