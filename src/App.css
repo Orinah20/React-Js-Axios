@@ -1,10 +1,13 @@
 
-
 .App-content {
-  padding: 2rem;
-  background-color: #282c34;
+  padding: 1rem;
+  background-color: rgb(51 65 85);
+  min-height: 100vh;
+  position: fixed;
   color: white;
-  /*width: 100%;*/
+  top: 2.5rem;
 }
 
+.loading_content{
 
+}
