@@ -2,6 +2,7 @@
   font-family: Open_Sans;
   src: url("Font/Open_Sans/static/OpenSans/OpenSans-Regular.ttf") format("truetype");
   font-weight: 400;
+  font-size: 0.8rem;
 }
 
 .App {

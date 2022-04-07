@@ -4,7 +4,7 @@ import axios from "axios";
 function useAPI(config, dependency){
 
     let [status, setStatus] = useState("idle")
-    let [error, setError] = useState(null)
+    let [error, setError] = useState()
     let [response, setResponse] = useState([])
 
 

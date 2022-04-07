@@ -9,35 +9,34 @@ function Main(){
         method:'GET',
         url:`http://85.159.214.103:8105/api/rest/master/applications/model-information/${application_code}`,
         headers: {
-            'AuthToken': 'LTFMOjo5YzM5YTIwZjZlNjM0NjRmM2I2MTFmYWQzODAzNTZmOWIyOGFhNGI3OWFjMWM0NGFlYzdmMDBlZGY0MjAxZTkw',
+            'AuthToken': 'LTFMOjpjMmRiMTU2ZTI2Y2YyZmZhODcwZjhmMTMxNjYwNDM4ZWEwYWU4NWFjMmEwMGMwMTc5MjM2ZTZhYzM0NmQ4MGFk',
             'RequestReference': 'bnnnnkkkmkk'
         }
     }, application_code)
 
     return(
         <div>
+
             {application_code === undefined &&
-                <div className="h-full">
-                    <div className="relative top-12 left-60 h-screen">
-                        No application Selected
-                    </div>
+                <div className="relative top-15 left-60 ">
+                   <h1> No application Selected </h1>
                 </div>
             }
 
             {status === "Loading" &&
-                    <div className="flex flex-row relative top-12 left-60 p-5 h-screen">
-                        <h2 className="flex flex-col w-9/12 justify-center content-center">Loading</h2>
+                    <div className=" relative top-12 left-60 p-5 ">
+                        <h2 className="w-9/12 justify-center content-center">Loading</h2>
                     </div>
             }
 
             {status === "Error" &&
-                <div className="flex flex-row relative top-12 left-60 p-5 h-screen">
+                <div className=" relative top-12 left-60 p-5 h-screen">
                     <h2>{error}</h2>
                 </div>
             }
 
             {status === "Success" &&
-                <div className="flex flex-row relative top-12 w-9/12 left-60 p-5 -z-20 h-screen">
+                <div className=" relative inline-block top-12 w-9/12 left-60 p-5 -z-20 h-screen">
                     {response.datamap_dictionary}
                 </div>
             }
