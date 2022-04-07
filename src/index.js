@@ -11,7 +11,7 @@ ReactDOM.render(
         <React.StrictMode>
             <Routes>
                 <Route path="/" element={<App/>}>
-                    <Route path="/:application_code" element={<Main/>}/>
+                    <Route path=":application_code" element={<Main/>}/>
                 </Route>
             </Routes>
         </React.StrictMode>

@@ -1,4 +1,5 @@
-import Main from "./MainContent";
+
+import {Outlet} from "react-router-dom";
 import {Link} from "react-router-dom";
 import useAPI from "./useAPI";
 
@@ -8,7 +9,7 @@ function SideNav(){
         method: 'GET',
         url: 'http://85.159.214.103:8105/api/rest/master/applications/?page=-1',
         headers: {
-            'AuthToken': 'LTFMOjphYzllZWEwMWE3MWE0NWQwMzczZTMxMTJkMWZhZjQyNzZmMmYyMDI1YzNiMmJkYzA4NjNiMmZhOTA1NDZjZGM1',
+            'AuthToken': 'LTFMOjo5YzM5YTIwZjZlNjM0NjRmM2I2MTFmYWQzODAzNTZmOWIyOGFhNGI3OWFjMWM0NGFlYzdmMDBlZGY0MjAxZTkw',
             'RequestReference': 'bnnnnkkkmkk'
         }
     })
@@ -45,10 +46,9 @@ function SideNav(){
             }
 
             {status === "Success" &&
-                <div className="h-full">
                 <div className="flex flex-row h-screen">
-                    <div className="bg-amber-400 relative w-60 p-2 h-full">{result}</div>
-                </div>
+                    <div className="bg-amber-400 top-12 fixed w-60 p-2 h-full">{result}</div>
+                    <Outlet/>
                 </div>
             }
         </div>
