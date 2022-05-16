@@ -9,7 +9,7 @@ function SideNav(){
         method: 'GET',
         url: 'http://85.159.214.103:8105/api/rest/master/applications/?page=-1',
         headers: {
-            'AuthToken': 'LTFMOjpjMmRiMTU2ZTI2Y2YyZmZhODcwZjhmMTMxNjYwNDM4ZWEwYWU4NWFjMmEwMGMwMTc5MjM2ZTZhYzM0NmQ4MGFk',
+            'AuthToken': 'LTFMOjo5YzM5YTIwZjZlNjM0NjRmM2I2MTFmYWQzODAzNTZmOWIyOGFhNGI3OWFjMWM0NGFlYzdmMDBlZGY0MjAxZTkw',
             'RequestReference': 'bnnnnkkkmkk'
         }
     })
@@ -30,21 +30,24 @@ function SideNav(){
     return(
         <div>
             {status === "Loading" &&
-                <div className="relative top-12 h-screen">
+                <div className="h-full">
+                <div className="flex flex-row h-screen">
                     <h2>Loading</h2>
+                </div>
                 </div>
             }
 
             {status === "Error" &&
-
-                <div className="relative top-12 h-screen">
+                <div className="h-full">
+                <div className="flex flex-row h-screen">
                     <h2>{error}</h2>
+                </div>
                 </div>
             }
 
             {status === "Success" &&
                 <div className="flex flex-row h-screen">
-                    <div className=" bg-gray-300 top-12 fixed w-60 p-2 h-full">{result}</div>
+                    <div className="bg-amber-400 top-12 fixed w-60 p-2 h-full">{result}</div>
                     <Outlet/>
                 </div>
             }
