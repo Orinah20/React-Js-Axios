@@ -1,15 +1,7 @@
 import useAPI from "./useAPI";
 import {useParams} from "react-router-dom";
-import DropData from "./Dropdown";
-import { Menu, Transition } from '@headlessui/react';
-import {ChevronDownIcon} from "@heroicons/react/solid";
-import {Fragment, useEffect, useState} from "react";
-import MainContent from "./MainContent";
-import Select from 'react-select'
-
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-}
+import { Menu} from '@headlessui/react';
+import {useState} from "react";
 
 function Main(){
 
@@ -21,20 +13,16 @@ function Main(){
         method:'GET',
         url:`http://85.159.214.103:8105/api/rest/master/applications/model-information/${application_code}`,
         headers: {
-            'AuthToken': 'LTFMOjo0NmU1NjRmMmJmOTJjNGE4MTkzMjgzMmExOWZkM2FmYjhjNjlhNTA2MDJlM2UxNDFjMDA0YjBjNGE1NzZiZTQw',
+            'AuthToken': 'LTFMOjplM2Y4Zjk1MDFjY2Y4YWRkNGM5YTMxM2M4YTM1NWIxZGI0YzNmNjQ4YTVmYTlkNjBlYWY2MmM2MjdiMTQxYzUy',
             'RequestReference': 'bnnnnkkkmkk'
         }
     }, application_code)
 
 
+    console.log(application_code)
+
     return(
         <div>
-            {application_code === undefined &&
-                <div className="relative top-15 left-60 ">
-                   <h1> No application Selected </h1>
-                </div>
-            }
-
             {status === "Loading" &&
                     <div className=" relative top-12 left-60 p-5 ">
                         <h2 className="w-9/12 justify-center content-center">Loading</h2>
@@ -59,10 +47,7 @@ function Main(){
                                     <option value={"deletion_datamap_xml"}>Deletion</option>
                                     <option value={"modification_datamap_xml"}>Modification</option>
                                 </select>
-
                             </div>
-
-
                         </Menu>
 
                     </div>
