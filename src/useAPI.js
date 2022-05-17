@@ -25,12 +25,12 @@ function useAPI(config, dependency){
                             setError(res.message)
                         }
                     })
+
         }catch(err) {
             setStatus("Error")
             console.log(err)
             setError(err.message)
         }
-
     }
 
     useEffect(() => {
