@@ -15,6 +15,7 @@ ReactDOM.render(
                     <Route path=":application_code" element={<Main/>}/>
                 </Route>
             </Routes>
+
         </React.StrictMode>
     </BrowserRouter>,
     document.getElementById('root')
